@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.3 — 2026-09-11
+
+Visual polish and graphical configuration release.
+
+- Enlarged all SVG flow arrowheads from 14 to 20 user-space units.
+- Preserved absolute marker sizing so line width cannot distort arrowheads.
+- Replaced the averaged grid voltage with separate L1, L2 and L3 values.
+- Realigned the grid voltage/frequency rows and their electrical icon.
+- Added a native Home Assistant graphical card editor.
+- Added grouped entity pickers for every supported sensor.
+- Added explicit `grid_voltage_l1`, `grid_voltage_l2` and `grid_voltage_l3` options.
+- Kept backward compatibility with the v0.0.2 `grid_voltage` array.
+- HACS entry point is now `lovelace-electro-card-v0.0.3.js`.
+
 ## v0.0.2 — 2026-09-11
 
 First entity-driven release.

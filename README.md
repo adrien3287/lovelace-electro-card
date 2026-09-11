@@ -1,8 +1,19 @@
 # Lovelace Electro Card
 
-**Version: 0.0.2**
+**Version: 0.0.3**
 
 A compact 2D Home Assistant Lovelace card for a residential backup / solar system.
+
+## v0.0.3
+
+Version 0.0.3 adds:
+
+- larger, consistently sized flow arrows,
+- separate L1, L2 and L3 grid-voltage values instead of an average,
+- polished alignment of the grid icon, phase values and frequency,
+- a native graphical card editor with grouped entity pickers for every sensor.
+
+Open the Lovelace card editor and select the sensors directly. YAML remains supported.
 
 ## v0.0.2
 
@@ -51,13 +62,13 @@ In HACS:
 4. Select **Dashboard** as repository type.
 5. Install **Lovelace Electro Card**.
 
-HACS v0.0.2 entry point:
+HACS v0.0.3 entry point:
 
 ```text
-/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.2.js
+/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.3.js
 ```
 
-The v0.0.2 entry point imports the validated `lovelace-electro-card.js` v0.0.1 visual baseline and applies live-value and flow overlays.
+The v0.0.3 entry point builds on v0.0.2 and applies the new display and editor layer.
 
 ## Card type
 
@@ -74,10 +85,9 @@ type: custom:lovelace-electro-card
 # Positive = import, negative = export
 grid_import_power: sensor.compteur_general_puissance
 grid_export_power: none
-grid_voltage:
-  - sensor.shellypro3em_fce8c0d97e64_phase_a_tension
-  - sensor.shellypro3em_fce8c0d97e64_phase_b_tension
-  - sensor.shellypro3em_fce8c0d97e64_phase_c_tension
+grid_voltage_l1: sensor.shellypro3em_fce8c0d97e64_phase_a_tension
+grid_voltage_l2: sensor.shellypro3em_fce8c0d97e64_phase_b_tension
+grid_voltage_l3: sensor.shellypro3em_fce8c0d97e64_phase_c_tension
 grid_frequency: sensor.shellypro3em_fce8c0d97e64_phase_a_frequence
 
 # Tableau général / autres charges
@@ -137,6 +147,7 @@ Any unavailable sensor may be set to `none` or omitted.
 ## Notes
 
 - `grid_import_power` is treated as a signed net-grid sensor: positive means import and negative means export.
-- `grid_voltage` accepts one entity, an array of entities, or a space/comma separated list. With three entities, the displayed voltage is their average.
+- `grid_voltage_l1`, `grid_voltage_l2` and `grid_voltage_l3` are displayed separately.
+- The old v0.0.2 `grid_voltage` array remains supported and is migrated when a phase is changed in the graphical editor.
 - Individual Dyness power sensors are used to determine left/right battery arrow direction. If unavailable, the total battery power is used as fallback.
 - The left MPPT and roof PV are intentionally allowed to show `—` while they are not yet operational.
