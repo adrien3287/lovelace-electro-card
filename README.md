@@ -1,8 +1,15 @@
 # Lovelace Electro Card
 
-**Version: 0.0.4**
+**Version: 0.0.5**
 
 A compact 2D Home Assistant Lovelace card for a residential backup / solar system.
+
+## v0.0.5
+
+Version 0.0.5 removes the separate meter and connects the grid directly to the
+main distribution board. The grid panel shows one signed power value and a
+compact L1/L2/L3 table with voltage, current and power. All flow arrowheads are
+removed; AC, DC and grid lines remain colour-coded.
 
 ## v0.0.4
 
@@ -45,7 +52,7 @@ PV Sud Toiture (30°) ──> MPPT gauche ──┐
                                         ├──> MultiPlus ──> Charges secourues
 PV Sud Balcon (60°) ──> MPPT droit ─────┘              └─> Charges critiques
 
-Réseau public <──> Compteur <──> Tableau général maison <──> MultiPlus
+Réseau public ─── Tableau général maison ─── MultiPlus
 
 Batterie gauche <──> SmartShunt <──> Batterie droite
                          ⇅
@@ -68,13 +75,13 @@ In HACS:
 4. Select **Dashboard** as repository type.
 5. Install **Lovelace Electro Card**.
 
-HACS v0.0.4 entry point:
+HACS v0.0.5 entry point:
 
 ```text
-/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.4.js
+/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.5.js
 ```
 
-The v0.0.4 entry point includes the v0.0.3 display/editor layer and restores the complete live-value update chain.
+The v0.0.5 entry point includes the graphical editor, direct grid topology and per-phase V/A/W display.
 
 ## Card type
 
@@ -94,6 +101,12 @@ grid_export_power: none
 grid_voltage_l1: sensor.shellypro3em_fce8c0d97e64_phase_a_tension
 grid_voltage_l2: sensor.shellypro3em_fce8c0d97e64_phase_b_tension
 grid_voltage_l3: sensor.shellypro3em_fce8c0d97e64_phase_c_tension
+grid_current_l1: none
+grid_current_l2: none
+grid_current_l3: none
+grid_power_l1: none
+grid_power_l2: none
+grid_power_l3: none
 grid_frequency: sensor.shellypro3em_fce8c0d97e64_phase_a_frequence
 
 # Tableau général / autres charges
@@ -154,6 +167,7 @@ Any unavailable sensor may be set to `none` or omitted.
 
 - `grid_import_power` is treated as a signed net-grid sensor: positive means import and negative means export.
 - `grid_voltage_l1`, `grid_voltage_l2` and `grid_voltage_l3` are displayed separately.
+- `grid_current_l1/l2/l3` and `grid_power_l1/l2/l3` add per-phase current and power.
 - The old v0.0.2 `grid_voltage` array remains supported and is migrated when a phase is changed in the graphical editor.
 - Individual Dyness power sensors are used to determine left/right battery arrow direction. If unavailable, the total battery power is used as fallback.
 - The left MPPT and roof PV are intentionally allowed to show `—` while they are not yet operational.

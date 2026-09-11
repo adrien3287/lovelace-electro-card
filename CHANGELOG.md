@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.5 — 2026-09-12
+
+Simplified, measurement-first grid display.
+
+- Removed the separate electricity meter block.
+- Connected the public grid directly to the main house distribution board.
+- Replaced import/export rows with one signed grid-power value.
+- The grid indicator is green when power is positive and red when negative.
+- Added voltage, current and power columns for L1, L2 and L3.
+- Added six phase-current/phase-power selectors to the graphical editor.
+- Removed every directional arrowhead from system flow lines.
+- Retained colour-coded AC, DC and grid connections.
+- HACS entry point is now `lovelace-electro-card-v0.0.5.js`.
+
 ## v0.0.4 — 2026-09-11
 
 Urgent live-value regression fix.
