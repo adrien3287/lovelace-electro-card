@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.6 — 2026-09-12
+
+Visual alignment and labelling polish.
+
+- Changed all DC connection lines and DC badge outlines from blue to red.
+- Reduced and moved the grid pylon beside the grid title and signed power.
+- Increased grid phase measurements to the standard card value size.
+- Renamed battery headers to `Batterie gauche` and `Batterie droite`.
+- Renamed both battery product rows to `Dyness PowerHaus 5,12 kWh`.
+- Removed the house icon and `Autres charges maison` label from the main board.
+- Raised both load icons by 5 px and reduced the critical-load icon to 90%.
+- Standardised PV and MPPT value-row spacing to 29 SVG units.
+- HACS entry point is now `lovelace-electro-card-v0.0.6.js`.
+
 ## v0.0.5 — 2026-09-12
 
 Simplified, measurement-first grid display.

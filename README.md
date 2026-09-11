@@ -1,8 +1,14 @@
 # Lovelace Electro Card
 
-**Version: 0.0.5**
+**Version: 0.0.6**
 
 A compact 2D Home Assistant Lovelace card for a residential backup / solar system.
+
+## v0.0.6
+
+Version 0.0.6 changes DC wiring to red and polishes the grid, battery, main-board,
+load and PV/MPPT layouts. It does not change entity configuration or measurement
+logic.
 
 ## v0.0.5
 
@@ -75,13 +81,13 @@ In HACS:
 4. Select **Dashboard** as repository type.
 5. Install **Lovelace Electro Card**.
 
-HACS v0.0.5 entry point:
+HACS v0.0.6 entry point:
 
 ```text
-/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.5.js
+/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.6.js
 ```
 
-The v0.0.5 entry point includes the graphical editor, direct grid topology and per-phase V/A/W display.
+The v0.0.6 entry point includes the v0.0.5 measurement display and its visual-polish layer.
 
 ## Card type
 
