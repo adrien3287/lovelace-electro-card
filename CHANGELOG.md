@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.0.4 — 2026-09-11
+
+Urgent live-value regression fix.
+
+- Restored updates for grid import/export, PV, MPPT, loads, Dyness and SmartShunt values.
+- Fixed the v0.0.3 `hass` lifecycle override that refreshed only the L1/L2/L3 overlay.
+- Re-renders only when a configured entity changes, avoiding unnecessary redraws.
+- Keeps the larger arrows, separate phase voltages and graphical editor from v0.0.3.
+- HACS entry point is now `lovelace-electro-card-v0.0.4.js`.
+
 ## v0.0.3 — 2026-09-11
 
 Visual polish and graphical configuration release.
