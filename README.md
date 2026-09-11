@@ -1,8 +1,14 @@
 # Lovelace Electro Card
 
-**Version: 0.0.3**
+**Version: 0.0.4**
 
 A compact 2D Home Assistant Lovelace card for a residential backup / solar system.
+
+## v0.0.4
+
+Version 0.0.4 fixes a v0.0.3 lifecycle regression that prevented most live
+values from refreshing. Grid, PV, MPPT, load, Dyness and SmartShunt values now
+update again. The card redraws only when one of its configured entities changes.
 
 ## v0.0.3
 
@@ -62,13 +68,13 @@ In HACS:
 4. Select **Dashboard** as repository type.
 5. Install **Lovelace Electro Card**.
 
-HACS v0.0.3 entry point:
+HACS v0.0.4 entry point:
 
 ```text
-/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.3.js
+/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.4.js
 ```
 
-The v0.0.3 entry point builds on v0.0.2 and applies the new display and editor layer.
+The v0.0.4 entry point includes the v0.0.3 display/editor layer and restores the complete live-value update chain.
 
 ## Card type
 
