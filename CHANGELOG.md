@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.7 — 2026-09-12
+
+Battery forecast panel and power alignment.
+
+- Aligned house, backup-load and critical-load power values on the same baseline.
+- Added a three-row battery forecast panel in the former meter area.
+- Added time-to-target-SOC, remaining-autonomy and charge/discharge-rate values.
+- Uses the requested three Home Assistant sensors as defaults.
+- Added all three forecast sensors to the graphical editor.
+- Preserves sensor units from Home Assistant.
+- HACS entry point is now `lovelace-electro-card-v0.0.7.js`.
+
 ## v0.0.6 — 2026-09-12
 
 Visual alignment and labelling polish.

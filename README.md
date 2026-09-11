@@ -1,8 +1,15 @@
 # Lovelace Electro Card
 
-**Version: 0.0.6**
+**Version: 0.0.7**
 
 A compact 2D Home Assistant Lovelace card for a residential backup / solar system.
+
+## v0.0.7
+
+Version 0.0.7 aligns the three house/load power values and adds a battery
+forecast panel with time to target SOC, remaining autonomy and charge/discharge
+rate. The requested sensors are built-in defaults and can also be changed in the
+graphical editor.
 
 ## v0.0.6
 
@@ -81,13 +88,13 @@ In HACS:
 4. Select **Dashboard** as repository type.
 5. Install **Lovelace Electro Card**.
 
-HACS v0.0.6 entry point:
+HACS v0.0.7 entry point:
 
 ```text
-/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.6.js
+/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.7.js
 ```
 
-The v0.0.6 entry point includes the v0.0.5 measurement display and its visual-polish layer.
+The v0.0.7 entry point includes the v0.0.6 visual layer and the battery-forecast panel.
 
 ## Card type
 
@@ -165,6 +172,11 @@ battery_total_power: sensor.victron_over_mqtt_battery_power_dc
 
 # Convention de signe batterie
 battery_power_sign: positive=charge negative=discharge
+
+# Prévisions batterie (valeurs par défaut, configuration optionnelle)
+time_to_soc: sensor.victron_over_mqtt_temps_de_charge
+remaining_autonomy: sensor.victron_over_mqtt_autonomie_charge_battery_dyness_full_empty
+charge_discharge_rate: sensor.autonomie_charge_battery_dyness_per_percent
 ```
 
 Any unavailable sensor may be set to `none` or omitted.
