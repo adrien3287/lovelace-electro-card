@@ -1,8 +1,15 @@
 # Lovelace Electro Card
 
-**Version: 0.0.7**
+**Version: 0.0.8**
 
 A compact 2D Home Assistant Lovelace card for a residential backup / solar system.
+
+## v0.0.8
+
+Version 0.0.8 fixes mobile and narrow-column scaling. The card no longer keeps the
+v0.0.1 `320px` minimum wrapper height when the available width is smaller than the
+16:9 drawing. The SVG now follows the available Lovelace card width without clipping
+the right side of the electrical system.
 
 ## v0.0.7
 
@@ -88,13 +95,13 @@ In HACS:
 4. Select **Dashboard** as repository type.
 5. Install **Lovelace Electro Card**.
 
-HACS v0.0.7 entry point:
+HACS v0.0.8 entry point:
 
 ```text
-/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.7.js
+/hacsfiles/lovelace-electro-card/lovelace-electro-card-v0.0.8.js
 ```
 
-The v0.0.7 entry point includes the v0.0.6 visual layer and the battery-forecast panel.
+The v0.0.8 entry point includes the v0.0.7 visual/data layer and the responsive sizing override.
 
 ## Card type
 
