@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.8 — 2026-09-14
+
+Responsive mobile sizing fix.
+
+- Removed the fixed `min-height: 320px` constraint from the rendered wrapper through the v0.0.8 override layer.
+- Keeps the electrical drawing at its native 16:9 aspect ratio while allowing it to shrink to the available Lovelace card width.
+- Adds explicit `min-width: 0` / `max-width: 100%` constraints to the host and card container.
+- Keeps the SVG fully fluid and uses `preserveAspectRatio="xMidYMid meet"`.
+- Prevents the right side of the electrical diagram from being clipped on narrow mobile screens.
+- HACS entry point is now `lovelace-electro-card-v0.0.8.js`.
+
 ## v0.0.7 — 2026-09-12
 
 Battery forecast panel and power alignment.
